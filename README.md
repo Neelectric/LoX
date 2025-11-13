@@ -50,7 +50,7 @@ If you use this work, please cite:
 ```bibtex
 @inproceedings{perin2025lox,
   title={LoX: Low-Rank Extrapolation Robustifies LLM Safety Against Fine-tuning}, 
-  author={Gabrel J. Perin and Runjin Chen and Xuxi Chen and Nina S. T. Hirata and Zhangyang Wang and Junyuan Hong},
+  author={Gabriel J. Perin and Runjin Chen and Xuxi Chen and Nina S. T. Hirata and Zhangyang Wang and Junyuan Hong},
   booktitle={COLM},
   year={2025}
 }
