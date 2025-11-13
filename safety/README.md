@@ -1,3 +1,31 @@
+## Alignment
+
+The models used throughout this work are aligned via DPO within the [OpenRLHF codebase](https://github.com/OpenRLHF/OpenRLHF), using the [HH-RLHF dataset](https://huggingface.co/datasets/Anthropic/hh-rlhf). An example of an alignment configuration is as follows:
+
+```
+deepspeed train_dpo.py \
+    --save_path /save/path \
+    --save_steps -1 \
+    --logging_steps 1 \
+    --eval_steps -1  \
+    --train_batch_size 128 \
+    --micro_train_batch_size 2 \
+    --pretrain meta-llama/Llama-2-7b-hf \
+    --bf16 \
+    --max_epochs 3 \
+    --max_len 1024 \
+    --zero_stage 3 \
+    --max_samples 65600 \
+    --beta 0.1 \
+    --learning_rate 5e-6 \
+    --dataset Anthropic/hh-rlhf \
+    --gradient_checkpointing \
+    --seed 48 \
+    --ref_offload > log.out
+```
+
+---
+
 ## Scripts
 
 Some scripts require you to set your OpenAI API key inside `utils.py`. Make sure to do that before running them.
