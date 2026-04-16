@@ -1,0 +1,11 @@
+# Ignore all files inside the gsm directory
+data/gsm/
+
+# Ignore all dataset files in the data directory by extension
+# This prevents accidental commits of large JSON, JSONL, or CSV files
+data/*.jsonl
+data/*.json
+data/*.csv
+
+# Note: The download script (data/download_data.sh) IS NOT ignored 
+# because it doesn't match the extensions above.
